@@ -1,0 +1,15 @@
+c:\git\BrickPiNet\BrickPiNet\obj\Debug\BrickPiNet.csprojResolveAssemblyReference.cache
+c:\git\BrickPiNet\BrickPiNet\bin\Debug\BrickPiNet.dll
+c:\git\BrickPiNet\BrickPiNet\bin\Debug\BrickPiNet.pdb
+c:\git\BrickPiNet\BrickPiNet\obj\Debug\BrickPiNet.dll
+c:\git\BrickPiNet\BrickPiNet\obj\Debug\BrickPiNet.pdb
+D:\git\BrickPiNet\BrickPiNet\bin\Debug\BrickPiNet.dll
+D:\git\BrickPiNet\BrickPiNet\bin\Debug\BrickPiNet.pdb
+D:\git\BrickPiNet\BrickPiNet\obj\Debug\BrickPiNet.csprojResolveAssemblyReference.cache
+D:\git\BrickPiNet\BrickPiNet\obj\Debug\BrickPiNet.dll
+D:\git\BrickPiNet\BrickPiNet\obj\Debug\BrickPiNet.pdb
+D:\git\BrickPiNet\test\BrickPiNet\bin\Debug\BrickPiNet.dll
+D:\git\BrickPiNet\test\BrickPiNet\bin\Debug\BrickPiNet.pdb
+D:\git\BrickPiNet\test\BrickPiNet\obj\Debug\BrickPiNet.csprojResolveAssemblyReference.cache
+D:\git\BrickPiNet\test\BrickPiNet\obj\Debug\BrickPiNet.dll
+D:\git\BrickPiNet\test\BrickPiNet\obj\Debug\BrickPiNet.pdb
