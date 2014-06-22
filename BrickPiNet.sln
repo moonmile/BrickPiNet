@@ -5,13 +5,11 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D8C64F1E-0AE9-4EF9-8B90-2FF5C9FB964C}"
 	ProjectSection(SolutionItems) = preProject
-		src\BrickPi.cs = src\BrickPi.cs
-		src\BrickPi.h = src\BrickPi.h
-		src\brickpinet.c = src\brickpinet.c
 		src\Makefile = src\Makefile
 		src\sample.cs = src\sample.cs
+		src\sampleCs.cs = src\sampleCs.cs
 		src\sampleF.fs = src\sampleF.fs
-		src\tick.h = src\tick.h
+		src\sampleF2.fs = src\sampleF2.fs
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{46C7E422-1390-4ACA-848C-127E78F4B27B}"
@@ -23,6 +21,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "test\Sample\Sample.csproj", "{37860F6A-5465-4356-8BA0-7CFBF2E731A2}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SampleF", "test\SampleF\SampleF.fsproj", "{1B7737D8-F2B0-4C14-AC43-19CC59F43409}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{2EA37A80-00D5-4153-9D7D-8BDCB5BB6755}"
+	ProjectSection(SolutionItems) = preProject
+		src\BPi.cs = src\BPi.cs
+		src\BrickPi.cs = src\BrickPi.cs
+		src\BrickPi.h = src\BrickPi.h
+		src\brickpinet.c = src\brickpinet.c
+		src\tick.h = src\tick.h
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,5 +90,6 @@ Global
 		{07EC6440-C21C-4410-BBAF-F144B6763170} = {46C7E422-1390-4ACA-848C-127E78F4B27B}
 		{37860F6A-5465-4356-8BA0-7CFBF2E731A2} = {46C7E422-1390-4ACA-848C-127E78F4B27B}
 		{1B7737D8-F2B0-4C14-AC43-19CC59F43409} = {46C7E422-1390-4ACA-848C-127E78F4B27B}
+		{2EA37A80-00D5-4153-9D7D-8BDCB5BB6755} = {D8C64F1E-0AE9-4EF9-8B90-2FF5C9FB964C}
 	EndGlobalSection
 EndGlobal

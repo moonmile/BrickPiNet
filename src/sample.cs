@@ -5,7 +5,7 @@ using System.Text;
 using BrickPiNet;
 namespace Sample
 {
-    class sample
+    class Program
     {
         int motor1 = BrickPi.PORT_B;
         int motor2 = BrickPi.PORT_C;
@@ -88,7 +88,7 @@ namespace Sample
 
         static void Main(string[] args)
         {
-            var pro = new sample();
+            var pro = new Program();
             pro.main();
         }
     }

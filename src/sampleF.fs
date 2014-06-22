@@ -1,4 +1,5 @@
-﻿open System
+﻿module sampleFs
+open System
 open BrickPiNet 
 
 let motor1 = BrickPi.PORT_B

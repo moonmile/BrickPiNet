@@ -45,6 +45,7 @@
       <Link>sample.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\src\sampleCs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
