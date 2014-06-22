@@ -99,6 +99,7 @@ namespace BrickPiNet
             get { return _enabled; }
             set
             {
+                BrickPi.SetMotorEnable(this.Port, value);
                 this.SetProperty(ref this._enabled, value);
             }
         }
@@ -109,6 +110,7 @@ namespace BrickPiNet
             get { return _speed; }
             set
             {
+                BrickPi.SetMotorSpeed(this.Port, value);
                 this.SetProperty(ref this._speed, value );
             }
         }
