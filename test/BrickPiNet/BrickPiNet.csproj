@@ -7,8 +7,8 @@
     <ProjectGuid>{07EC6440-C21C-4410-BBAF-F144B6763170}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BrickPiNet</RootNamespace>
-    <AssemblyName>BrickPiNet</AssemblyName>
+    <RootNamespace>Moonmile.BrickPiNet</RootNamespace>
+    <AssemblyName>Moonmile.BrickPiNet</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

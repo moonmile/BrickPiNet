@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace BrickPiNet
+namespace Moonmile.BrickPiNet
 {
     public abstract class BindableBase : INotifyPropertyChanged
     {

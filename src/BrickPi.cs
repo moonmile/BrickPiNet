@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
-namespace BrickPiNet
+namespace Moonmile.BrickPiNet
 {
     public class BrickPi
     {
@@ -118,5 +118,52 @@ namespace BrickPiNet
         public static extern void SetTimeout(int time);
         [DllImport("libbrickpinet")]
         public static extern int GetTimeout();
+
+        [DllImport("libbrickpinet")]
+        public static extern void SetSensorType(int port, int type);
+        [DllImport("libbrickpinet")]
+        public static extern int GetSensorType(int port);
+
+        [DllImport("libbrickpinet")]
+        public static extern void ButtonInit();
+        [DllImport("libbrickpinet")]
+        public static extern void ButtonUpdate(int port);
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonL1();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonL2();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonR1();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonR2();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonA();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonB();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonC();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonD();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonTri();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonSqr();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonCir();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonCro();
+
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonLjb();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonRjb();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonLjx();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonLjy();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonRjx();
+        [DllImport("libbrickpinet")]
+        public static extern int GetButtonRjy();
     }
 }

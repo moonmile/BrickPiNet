@@ -1,6 +1,6 @@
 ﻿module sampleF2
 open System
-open BrickPiNet 
+open Moonmile.BrickPiNet 
 
 let speed = 200
 // main

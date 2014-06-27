@@ -1,4 +1,4 @@
-﻿2014/06/27 14:00:54 にビルドを開始しました。
+﻿2014/06/27 16:25:40 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "C:\git\BrickPiNet\test\libbrickpinet\libbrickpinet.vcxproj" (Build ターゲット)。
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\src\brickpinet.c
@@ -27,4 +27,4 @@
 
 ビルドに失敗しました。
 
-経過時間 00:00:00.70
+経過時間 00:00:00.67

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BrickPiNet;
+using Moonmile.BrickPiNet;
 namespace Sample
 {
     class Program
@@ -42,7 +42,7 @@ namespace Sample
             BrickPi.SetMotorSpeed(motor2, 0);
         }
 
-        void main()
+        public void main()
         {
             int res;
 
@@ -85,12 +85,11 @@ namespace Sample
                 }
             }
         }
-#if RELEASE
+
         static void Main(string[] args)
         {
             var pro = new Program();
             pro.main();
         }
-#endif
     }
 }

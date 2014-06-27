@@ -50,8 +50,39 @@ int GetSensor( int port ) {
 }
 void SetSensorType( int port, int value ) {
 	BrickPi.SensorType[port] = value;
+	BrickPi.SensorI2CSpeed[port] = 6; //  I2C_SPEED		;
+	BrickPi.SensorI2CDevices[port] = 1;
+	BrickPi.SensorSettings[port][0] = 0;
+	BrickPi.SensorI2CAddr[port][0] = 0x02;	//address for writing
 }
 int GetSensorType( int port ) {
 	return  BrickPi.SensorType[port];
 }
 
+//Store the button's of the MINDSENSORS PSP Controller
+static struct button _btn;
+
+void ButtonInit() {
+	_btn = init_psp(_btn);
+}
+void ButtonUpdate( int port ) {
+	_btn = upd(_btn, port);
+}
+int GetButtonL1() { return (int)_btn.l1; }
+int GetButtonL2() { return (int) _btn.l2; }
+int GetButtonR1() { return (int) _btn.r1; }
+int GetButtonR2() { return (int) _btn.r2; }
+int GetButtonA() { return (int) _btn.a; }
+int GetButtonB() { return (int) _btn.b; }
+int GetButtonC() { return (int) _btn.c; }
+int GetButtonD() { return (int) _btn.d; }
+int GetButtonTri() { return (int) _btn.tri; }
+int GetButtonSqr() { return (int) _btn.sqr; }
+int GetButtonCir() { return (int) _btn.cir; }
+int GetButtonCro() { return (int) _btn.cro; }
+int GetButtonLjb() { return (int) _btn.ljb; }
+int GetButtonRjb() { return (int) _btn.rjb; }
+int GetButtonLjx() { return _btn.ljx; }
+int GetButtonLjy() { return _btn.ljy; }
+int GetButtonRjx() { return _btn.rjx; }
+int GetButtonRjy() { return _btn.rjy; }

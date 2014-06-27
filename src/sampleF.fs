@@ -1,6 +1,6 @@
 ﻿module sampleFs
 open System
-open BrickPiNet 
+open Moonmile.BrickPiNet 
 
 let motor1 = BrickPi.PORT_B
 let motor2 = BrickPi.PORT_C
