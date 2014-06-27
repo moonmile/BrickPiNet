@@ -8,11 +8,11 @@ namespace BrickPiNet
 {
     public class BPi
     {
-        public ObservableCollection<BPiMotor> Motors;
-        public bool AutoUpdate { get; set; }
+        protected internal static ObservableCollection<BPiMotor> Motors;
+        public static bool AutoUpdate { get; set; }
 
-        private int _timeout = 3000;
-        public int Timeout
+        private static int _timeout = 3000;
+        public static int Timeout
         {
             get { return _timeout; }
             set
@@ -31,11 +31,11 @@ namespace BrickPiNet
         /// </summary>
         public BPi()
         {
-            this.Motors = new ObservableCollection<BPiMotor>();
-            this.Motors.CollectionChanged += Motors_CollectionChanged;
-            this.AutoUpdate = false;
+            BPi.Motors = new ObservableCollection<BPiMotor>();
+            BPi.Motors.CollectionChanged += Motors_CollectionChanged;
+            BPi.AutoUpdate = false;
         }
-        public void Setup()
+        public static void Setup()
         {
             int res = BrickPi.Setup();
             if (res != 0)
@@ -76,7 +76,7 @@ namespace BrickPiNet
 
         void it_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (this.AutoUpdate == true) 
+            if (BPi.AutoUpdate == true) 
                 Update();
         }
 
@@ -91,6 +91,11 @@ namespace BrickPiNet
     }
     public class BPiMotor : BindableBase
     {
+        public BPiMotor()
+        {
+            BPi.Motors.Add(this);
+        }
+
         public int Port { get; set; }
 
         private bool _enabled = false;

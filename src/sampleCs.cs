@@ -11,15 +11,15 @@ namespace Sample
         void main()
         {
             int speed = 200;
-            var bpi = new BPi();
+            // var bpi = new BPi();
             // initialize 
-            bpi.Setup();
-            bpi.AutoUpdate = true;
+            BPi.Setup();
+            BPi.AutoUpdate = true;
             var motor1 = new BPiMotor() { Port = BrickPi.PORT_B, Enabled = true };
             var motor2 = new BPiMotor() { Port = BrickPi.PORT_C, Enabled = true };
-            bpi.Motors.Add(motor1);
-            bpi.Motors.Add(motor2);
-            bpi.Timeout = 3000;
+            //bpi.Motors.Add(motor1);
+            //bpi.Motors.Add(motor2);
+            BPi.Timeout = 3000;
 
             Console.WriteLine("start");
             bool loop = true;
@@ -52,7 +52,6 @@ namespace Sample
                         loop = false;
                         break;
                 }
-                // bpi.Update();
             }
         }
         static void Main(string[] args)

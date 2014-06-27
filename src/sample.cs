@@ -85,11 +85,12 @@ namespace Sample
                 }
             }
         }
-
+#if RELEASE
         static void Main(string[] args)
         {
             var pro = new Program();
             pro.main();
         }
+#endif
     }
 }
