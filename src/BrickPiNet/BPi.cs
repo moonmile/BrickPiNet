@@ -30,15 +30,15 @@ namespace Moonmile.BrickPiNet
         /// </summary>
         public BPi()
         {
+        }
+
+        public static void Setup()
+        {
             BPi.Motors = new ObservableCollection<BPiMotor>();
             BPi.Motors.CollectionChanged += Motors_CollectionChanged;
             BPi.Sensers = new ObservableCollection<BPiSensor>();
             BPi.Sensers.CollectionChanged += Sensers_CollectionChanged;
             BPi.AutoUpdate = false;
-        }
-
-        public static void Setup()
-        {
             int res = BrickPi.Setup();
             if (res != 0)
             {
@@ -47,7 +47,7 @@ namespace Moonmile.BrickPiNet
             }
         }
 
-        void Motors_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        static void Motors_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             switch (e.Action)
             {
@@ -75,7 +75,7 @@ namespace Moonmile.BrickPiNet
                 throw new Exception(string.Format("Error: BrickPi.SetupSensors: {0}", res));
             }
         }
-        void Sensers_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        static void Sensers_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             switch (e.Action)
             {
@@ -103,7 +103,7 @@ namespace Moonmile.BrickPiNet
             }
         }
 
-        void it_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        static void it_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if (BPi.AutoUpdate == true) 
                 Update();
@@ -112,7 +112,7 @@ namespace Moonmile.BrickPiNet
         /// <summary>
         /// call UpdateValues
         /// </summary>
-        public void Update()
+        public static void Update()
         {
             BrickPi.UpdateValues();
             // System.Threading.Thread.Sleep(10);

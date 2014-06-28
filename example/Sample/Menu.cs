@@ -17,7 +17,7 @@ namespace Sample
             }
             else
             {
-                switch (args[1])
+                switch (args[0])
                 {
                     case "raw": new Program().main(); break;
                     case "simple": new simplebot_simple().main(); break;
@@ -27,6 +27,7 @@ namespace Sample
                     case "ev3gyro": new ev3.ev3_gyrosensor().main(); break;
                     case "ev3touch": new ev3.ev3_touchsensor().main(); break;
                     default:
+			Console.WriteLine("arguments error");
                         Usage();
                         break;
                 }
