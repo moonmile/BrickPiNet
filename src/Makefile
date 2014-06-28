@@ -9,9 +9,10 @@ all: ../lib/libbrickpinet.so ../lib/BrickPiNet.dll
 #sampleF2.exe: libbrickpinet.so BrickPi.dll
 #	fsharpc /out:sampleF.exe /r:BrickPi.dll sampleF2.fs 
 
-libbrickpinet.so: brickpinet.o 
+../lib/libbrickpinet.so: libbrickpinet/brickpinet.c 
 	gcc -fPIC -shared -o ../lib/libbrickpinet.so libbrickpinet/brickpinet.c -lrt -lm -L/usr/local/lib -lwiringPi
-BrickPi.dll: BrickPi.cs 
+
+../lib/BrickPiNet.dll: BrickPiNet/BrickPi.cs BrickPiNet/BPi.cs
 	gmcs /target:library /out:../lib/BrickPi.dll \
 	-sdk:4.5 \
 	BrickPiNet/BindableBase.cs  \
