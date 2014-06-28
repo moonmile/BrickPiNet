@@ -1,16 +1,13 @@
-﻿module sampleF2
+﻿module simplebot_simple
 open System
 open Moonmile.BrickPiNet 
 
 let speed = 200
 // main
-// let bpi = new BPi()
 BPi.Setup()
 BPi.AutoUpdate <- true
 let motor1 = new BPiMotor( Port = BrickPi.PORT_B, Enabled = true )
 let motor2 = new BPiMotor( Port = BrickPi.PORT_B, Enabled = true )
-//bpi.Motors.Add(motor1)
-//bpi.Motors.Add(motor2)
 BPi.Timeout <- 3000 
 Console.WriteLine("start")
 let mutable loop = true

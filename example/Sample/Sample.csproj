@@ -45,6 +45,7 @@
     <Compile Include="ev3\ev3_colorsensor.cs" />
     <Compile Include="ev3\ev3_gyrosensor.cs" />
     <Compile Include="ev3\ev3_touchsensor.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="bot\simplebot_psp.cs" />
     <Compile Include="bot\simplebot_simple.cs" />

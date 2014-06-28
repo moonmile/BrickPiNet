@@ -85,11 +85,5 @@ namespace Sample
                 }
             }
         }
-
-        static void Main(string[] args)
-        {
-            var pro = new Program();
-            pro.main();
-        }
     }
 }

@@ -55,8 +55,8 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <None Include="App.config" />
-    <Compile Include="samplebot_raw.fs" />
-    <Compile Include="samplebot_smple.fs" />
+    <Compile Include="simplebot_raw.fs" />
+    <Compile Include="simplebot_simple.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

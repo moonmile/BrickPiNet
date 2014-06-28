@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Moonmile.BrickPiNet;
 
-namespace Sample
+namespace Sample.ev3
 {
     public class ev3_touchsensor
     {
