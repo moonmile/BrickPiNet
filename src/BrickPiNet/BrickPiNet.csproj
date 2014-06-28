@@ -39,13 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\src\BPi.cs">
-      <Link>BPi.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\BrickPi.cs">
-      <Link>BrickPi.cs</Link>
-    </Compile>
-    <Compile Include="..\..\src\BindableBase.cs" />
+    <Compile Include="BindableBase.cs" />
+    <Compile Include="BPi.cs" />
+    <Compile Include="BrickPi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

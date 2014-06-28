@@ -41,9 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\src\sample.cs">
-      <Link>bot\sample.cs</Link>
-    </Compile>
+    <Compile Include="bot\simplebot_raw.cs" />
+    <Compile Include="ev3\ev3_colorsensor.cs" />
+    <Compile Include="ev3\ev3_gyrosensor.cs" />
+    <Compile Include="ev3\ev3_touchsensor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="bot\simplebot_psp.cs" />
     <Compile Include="bot\simplebot_simple.cs" />
@@ -53,13 +54,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BrickPiNet\BrickPiNet.csproj">
+    <ProjectReference Include="..\..\src\BrickPiNet\BrickPiNet.csproj">
       <Project>{07ec6440-c21c-4410-bbaf-f144b6763170}</Project>
       <Name>BrickPiNet</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ev3\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

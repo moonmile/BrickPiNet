@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Text;
-using System.Runtime.InteropServices;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
@@ -117,7 +115,7 @@ namespace Moonmile.BrickPiNet
         public void Update()
         {
             BrickPi.UpdateValues();
-            System.Threading.Thread.Sleep(10);
+            // System.Threading.Thread.Sleep(10);
         }
     }
     public class BPiMotor : BindableBase
@@ -169,6 +167,10 @@ namespace Moonmile.BrickPiNet
                 this.SetProperty(ref this._sensorType, value);
             }
         }
+        public virtual void Update()
+        {
+            BrickPi.UpdateValues();
+        }
     }
 
     public class BPiJoystick : BPiSensor 
@@ -185,9 +187,9 @@ namespace Moonmile.BrickPiNet
             base.SensorType = BrickPi.TYPE_SENSOR_I2C;
         }
 
-        public void Update()
+        public override void Update()
         {
-            BrickPi.UpdateValues();
+            base.Update();
             BrickPi.ButtonUpdate(this.Port);
             _Buttons.L1 = BrickPi.GetButtonL1() == 0;
             _Buttons.L2 = BrickPi.GetButtonL2() == 0;
@@ -229,6 +231,61 @@ namespace Moonmile.BrickPiNet
             public int RightJoyX { get; set; }
             public int RightJoyY { get; set; }
         }
+    }
 
+    public class BPiTouch : BPiSensor
+    {
+        public BPiTouch()
+            : base()
+        {
+            base.SensorType = BrickPi.TYPE_SENSOR_EV3_TOUCH_0;
+        }
+        public bool IsTouched
+        {
+            get
+            {
+                this.Update();
+                if (BrickPi.GetSensor(this.Port) > 1020)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+    }
+    public class BPiColor : BPiSensor
+    {
+        public BPiColor()
+            : base()
+        {
+            base.SensorType = BrickPi.TYPE_SENSOR_EV3_COLOR_M3;
+        }
+        public int RowValue
+        {
+            get
+            {
+                this.Update();
+                return BrickPi.GetSensor(this.Port);
+            }
+        }
+    }
+    public class BPiGyro : BPiSensor
+    {
+        public BPiGyro()
+            : base()
+        {
+            base.SensorType = BrickPi.TYPE_SENSOR_EV3_GYRO_M3;
+        }
+        public int RowValue
+        {
+            get
+            {
+                this.Update();
+                return BrickPi.GetSensor(this.Port);
+            }
+        }
     }
 }

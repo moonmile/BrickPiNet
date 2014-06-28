@@ -14,7 +14,6 @@ namespace Sample
 
         public void main()
         {
-            this.speed = 200;
             BPi.Setup();
             BPi.AutoUpdate = true;
             this.motor1 = new BPiMotor() { Port = BrickPi.PORT_B, Enabled = true };

@@ -74,11 +74,11 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\BrickPi.h" />
-    <ClInclude Include="..\..\src\tick.h" />
+    <ClCompile Include="brickpinet.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\brickpinet.c" />
+    <ClInclude Include="BrickPi.h" />
+    <ClInclude Include="tick.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

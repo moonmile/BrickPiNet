@@ -54,11 +54,9 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
-    <Compile Include="..\..\src\sampleF2.fs" />
     <None Include="App.config" />
-    <Compile Include="..\..\src\sampleF.fs">
-      <Link>sampleF.fs</Link>
-    </Compile>
+    <Compile Include="samplebot_raw.fs" />
+    <Compile Include="samplebot_smple.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -68,9 +66,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BrickPiNet\BrickPiNet.csproj">
+    <ProjectReference Include="..\..\src\BrickPiNet\BrickPiNet.csproj">
       <Name>BrickPiNet</Name>
       <Project>{07ec6440-c21c-4410-bbaf-f144b6763170}</Project>
       <Private>True</Private>

@@ -88,8 +88,11 @@ namespace Moonmile.BrickPiNet
         public const int TYPE_SENSOR_EV3_INFRARED_M4 = 65;
         public const int TYPE_SENSOR_EV3_INFRARED_M5 = 66;
 
-        public const int BIT_I2C_MID = 0x01;  // Do one of those funny clock pulses between writing and reading. defined for each device.
-        public const int BIT_I2C_SAME = 0x02;  // The transmit data, and the number of bytes to read and write isn't going to change. defined for each device.
+        public const int TYPE_SENSOR_EV3_TOUCH_0 = 66;
+        
+
+        public const int BIT_I2C_MID = 0x01;    // Do one of those funny clock pulses between writing and reading. defined for each device.
+        public const int BIT_I2C_SAME = 0x02;   // The transmit data, and the number of bytes to read and write isn't going to change. defined for each device.
 
         public const int INDEX_RED = 0;
         public const int INDEX_GREEN = 1;
@@ -119,6 +122,8 @@ namespace Moonmile.BrickPiNet
         [DllImport("libbrickpinet")]
         public static extern int GetTimeout();
 
+        [DllImport("libbrickpinet")]
+        public static extern int GetSensor(int port);
         [DllImport("libbrickpinet")]
         public static extern void SetSensorType(int port, int type);
         [DllImport("libbrickpinet")]
