@@ -1,15 +1,15 @@
-BrickPiNet
+ï»¿BrickPiNet
 ==========
 
-Raspberry Pi ‚©‚ç LEGO MINDSTOMES ‚ðˆµ‚¤ BrickPi ƒ‚ƒWƒ…[ƒ‹‚Ì .NET ”Å‚Å‚·B
+Raspberry Pi ã‹ã‚‰ LEGO mindstorms EV3 ã‚’æ‰±ã† BrickPi ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã® .NET ç‰ˆã§ã™ã€‚
 
-## “Á’¥
+## ç‰¹å¾´
 
-- BPiMotor, BPiSensor ƒNƒ‰ƒX‚ÅƒIƒuƒWƒFƒNƒgŽwŒü“I‚ÉƒAƒNƒZƒX‚ª‰Â”\
-- MVVM ƒpƒ^[ƒ“‚ðŽg‚Á‚½ƒvƒƒpƒeƒBXV
-- ƒZƒ“ƒT[‚Ì’lXV‚ÍƒCƒxƒ“ƒg‚ÅŽæ“¾i—\’èj
+- BPiMotor, BPiSensor ã‚¯ãƒ©ã‚¹ã§ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆæŒ‡å‘çš„ã«ã‚¢ã‚¯ã‚»ã‚¹ãŒå¯èƒ½
+- MVVM ãƒ‘ã‚¿ãƒ¼ãƒ³ã‚’ä½¿ã£ãŸãƒ—ãƒ­ãƒ‘ãƒ†ã‚£æ›´æ–°
+- ã‚»ãƒ³ã‚µãƒ¼ã®å€¤æ›´æ–°ã¯ã‚¤ãƒ™ãƒ³ãƒˆã§å–å¾—ï¼ˆäºˆå®šï¼‰
 
-## C# ƒTƒ“ƒvƒ‹
+## C# ã‚µãƒ³ãƒ—ãƒ«
 
 ```
 using System;
@@ -85,7 +85,7 @@ namespace Sample
 }
 ```
 
-## F# ƒTƒ“ƒvƒ‹
+## F# ã‚µãƒ³ãƒ—ãƒ«
 
 ```
 module sampleF2
