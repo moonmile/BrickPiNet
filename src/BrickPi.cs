@@ -124,6 +124,7 @@ namespace Moonmile.BrickPiNet
         [DllImport("libbrickpinet")]
         public static extern int GetSensorType(int port);
 
+        // for Joypad buttons
         [DllImport("libbrickpinet")]
         public static extern void ButtonInit();
         [DllImport("libbrickpinet")]

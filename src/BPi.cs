@@ -155,6 +155,7 @@ namespace Moonmile.BrickPiNet
     {
         public BPiSensor()
         {
+            BPi.Sensers.Add(this);
         }
         public int Port { get; set; }
 
@@ -168,37 +169,47 @@ namespace Moonmile.BrickPiNet
                 this.SetProperty(ref this._sensorType, value);
             }
         }
+    }
 
-        private Button _JoyStick = new Button();
-        public Button JoyStick
+    public class BPiJoystick : BPiSensor 
+    {
+        private Btns _Buttons = new Btns();
+        public Btns Buttons
         {
-            get { return _JoyStick; }
+            get { return this._Buttons; }
         }
+
+        public BPiJoystick()
+            : base()
+        {
+            base.SensorType = BrickPi.TYPE_SENSOR_I2C;
+        }
+
         public void Update()
         {
             BrickPi.UpdateValues();
             BrickPi.ButtonUpdate(this.Port);
-            _JoyStick.L1 = BrickPi.GetButtonL1() == 0;
-            _JoyStick.L2 = BrickPi.GetButtonL2() == 0;
-            _JoyStick.R1 = BrickPi.GetButtonR1() == 0;
-            _JoyStick.R2 = BrickPi.GetButtonR2() == 0;
-            _JoyStick.A = BrickPi.GetButtonA() == 0;
-            _JoyStick.B = BrickPi.GetButtonB() == 0;
-            _JoyStick.C = BrickPi.GetButtonC() == 0;
-            _JoyStick.D = BrickPi.GetButtonD() == 0;
-            _JoyStick.Triangle = BrickPi.GetButtonTri() == 0;
-            _JoyStick.Square = BrickPi.GetButtonSqr() == 0;
-            _JoyStick.Circle = BrickPi.GetButtonCir() == 0;
-            _JoyStick.Cross = BrickPi.GetButtonCro() == 0;
-            _JoyStick.LeftJoyButton = BrickPi.GetButtonLjb() == 0;
-            _JoyStick.RightJoyButton = BrickPi.GetButtonRjb() == 0;
-            _JoyStick.LeftJoyX = BrickPi.GetButtonLjx();
-            _JoyStick.LeftJoyY = BrickPi.GetButtonLjy();
-            _JoyStick.RightJoyX = BrickPi.GetButtonRjx();
-            _JoyStick.RightJoyY = BrickPi.GetButtonRjy();
+            _Buttons.L1 = BrickPi.GetButtonL1() == 0;
+            _Buttons.L2 = BrickPi.GetButtonL2() == 0;
+            _Buttons.R1 = BrickPi.GetButtonR1() == 0;
+            _Buttons.R2 = BrickPi.GetButtonR2() == 0;
+            _Buttons.A = BrickPi.GetButtonA() == 0;
+            _Buttons.B = BrickPi.GetButtonB() == 0;
+            _Buttons.C = BrickPi.GetButtonC() == 0;
+            _Buttons.D = BrickPi.GetButtonD() == 0;
+            _Buttons.Triangle = BrickPi.GetButtonTri() == 0;
+            _Buttons.Square = BrickPi.GetButtonSqr() == 0;
+            _Buttons.Circle = BrickPi.GetButtonCir() == 0;
+            _Buttons.Cross = BrickPi.GetButtonCro() == 0;
+            _Buttons.LeftJoyButton = BrickPi.GetButtonLjb() == 0;
+            _Buttons.RightJoyButton = BrickPi.GetButtonRjb() == 0;
+            _Buttons.LeftJoyX = BrickPi.GetButtonLjx();
+            _Buttons.LeftJoyY = BrickPi.GetButtonLjy();
+            _Buttons.RightJoyX = BrickPi.GetButtonRjx();
+            _Buttons.RightJoyY = BrickPi.GetButtonRjy();
         }
 
-        public class Button {
+        public class Btns {
             public bool L1 { get; set; }
             public bool L2 { get; set; }
             public bool R1 { get; set; }
@@ -218,5 +229,6 @@ namespace Moonmile.BrickPiNet
             public int RightJoyX { get; set; }
             public int RightJoyY { get; set; }
         }
-    } 
+
+    }
 }

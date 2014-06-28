@@ -42,12 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\src\sample.cs">
-      <Link>sample.cs</Link>
+      <Link>bot\sample.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="simplebot_psp.cs" />
-    <Compile Include="simplebot_simple.cs" />
-    <Compile Include="simplebot_speed.cs" />
+    <Compile Include="bot\simplebot_psp.cs" />
+    <Compile Include="bot\simplebot_simple.cs" />
+    <Compile Include="bot\simplebot_speed.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -57,6 +57,9 @@
       <Project>{07ec6440-c21c-4410-bbaf-f144b6763170}</Project>
       <Name>BrickPiNet</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ev3\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
