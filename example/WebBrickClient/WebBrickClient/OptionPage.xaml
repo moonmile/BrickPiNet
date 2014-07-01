@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="WebBrickClient.OptionPage">
+  <StackLayout Padding="5,20,5,5">
+    <Label Text="options" />
+		<Label Text="Server" />
+    <Entry Text="{Binding Server}" Keyboard="Text" Placeholder="servername" />
+		<Label Text="Port" />
+    <Entry Text="{Binding Port}" Keyboard="Numeric" Placeholder="80" />
+		<Label Text="URL" />
+    <Entry Text="{Binding URL}" Keyboard="Text" Placeholder="/" />
+		<Button Text="Cancel" Clicked="OnCancel" />
+		<Button Text="Ok"     Clicked="OnOk"/>
+  </StackLayout>
+</ContentPage>

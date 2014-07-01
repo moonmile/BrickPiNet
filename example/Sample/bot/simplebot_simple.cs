@@ -12,27 +12,27 @@ namespace Sample
         BPiMotor motor1, motor2;
         int speed = 0;
 
-        void fwd()
+        public void fwd()
         {
             motor1.Speed = speed;
             motor2.Speed = speed;
         }
-        void back()
+        public void back()
         {
             motor1.Speed = -speed;
             motor2.Speed = -speed;
         }
-        void left()
+        public void left()
         {
             motor1.Speed = speed;
             motor2.Speed = -speed;
         }
-        void right()
+        public void right()
         {
             motor1.Speed = -speed;
             motor2.Speed = speed;
         }
-        void stop()
+        public void stop()
         {
             motor1.Speed = 0;
             motor2.Speed = 0;
@@ -55,7 +55,7 @@ namespace Sample
             }
         }
 
-        public void main()
+        public void init()
         {
             this.speed = 200;
             BPi.Setup();
@@ -63,7 +63,12 @@ namespace Sample
             this.motor1 = new BPiMotor() { Port = BrickPi.PORT_B, Enabled = true };
             this.motor2 = new BPiMotor() { Port = BrickPi.PORT_C, Enabled = true };
             BPi.Timeout = 3000;
+        }
 
+        public void main()
+        {
+            Console.WriteLine("simplebot_simple init");
+            init();
             Console.WriteLine("simplebot_simple start");
             this.Go();
         }

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+					   x:Class="WebBrickClient.MainPage"
+             Title="WebBrick Client">
+	<StackLayout Padding="5,20,5,5">
+    <Label Text="WebBrick Client Sample" />
+		<Button Text="Forward" Clicked="OnClickForward"/>
+		<Button Text="Back"    Clicked="OnClickBack"/>
+		<Button Text="Left"    Clicked="OnClickLeft"/>
+		<Button Text="Right"   Clicked="OnClickRight"/>
+		<Button Text="Stop"    Clicked="OnClickStop"/>
+		<Button Text="Option"  Clicked="OnClickOption" />
+		<Label x:Name="result" />
+	</StackLayout>
+</ContentPage>
