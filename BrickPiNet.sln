@@ -13,6 +13,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrickPiNet", "src\BrickPiNet\BrickPiNet.csproj", "{07EC6440-C21C-4410-BBAF-F144B6763170}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "example", "example", "{20FC0107-B91C-454F-8443-697480FB2EE0}"
+	ProjectSection(SolutionItems) = preProject
+		example\Makefile = example\Makefile
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "example\Sample\Sample.csproj", "{37860F6A-5465-4356-8BA0-7CFBF2E731A2}"
 EndProject

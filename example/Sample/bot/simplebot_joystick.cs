@@ -3,10 +3,10 @@ using Moonmile.BrickPiNet;
 
 namespace Sample
 {
-    class simplebot_psp
+    class simplebot_joystick
     {
         BPiMotor motor1, motor2;
-        BPiJoystick jsk;
+        BotPiJoystick js;
 
         public void main()
         {
@@ -14,8 +14,10 @@ namespace Sample
             BPi.AutoUpdate = true;
             this.motor1 = new BPiMotor() { Port = BrickPi.PORT_B, Enabled = true };
             this.motor2 = new BPiMotor() { Port = BrickPi.PORT_C, Enabled = true };
-            this.jsk = new BPiJoystick() {  Port = BrickPi.PORT_1 };
 
+            BotPi.SetupJoystick();
+            this.js = new BotPiJoystick(); 
+            this.js.OnChanged += OnJoystickChanged;
             BPi.Timeout = 3000;
             this.Go();
         }
@@ -27,17 +29,12 @@ namespace Sample
         }
         void Go()
         {
-            while (true)
-            {
-                // Get data of joystick button's
-                jsk.Update();
-                if (jsk.Buttons.Cross == true) // stop
-                    break;
-                int sp1 = jsk.Buttons.LeftJoyX + jsk.Buttons.LeftJoyY;
-                int sp2 = jsk.Buttons.RightJoyX + jsk.Buttons.RightJoyY;
-                // move robot 
-                move_bot(sp1 * 2, sp2 * 2);
-            }
+            var k = Console.ReadKey();
+        }
+
+        void OnJoystickChanged( object sender, EventJsArgs e )
+        {
+            Console.WriteLine("joy: {0} {1} {2}", e.ev.type, e.ev.number, e.ev.value);
         }
     }
 }

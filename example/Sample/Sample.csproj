@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bot\simplebot_joystick.cs" />
     <Compile Include="bot\simplebot_raw.cs" />
     <Compile Include="ev3\ev3_colorsensor.cs" />
     <Compile Include="ev3\ev3_gyrosensor.cs" />

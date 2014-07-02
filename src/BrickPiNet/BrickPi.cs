@@ -172,4 +172,34 @@ namespace Moonmile.BrickPiNet
         [DllImport("libbrickpinet")]
         public static extern int GetButtonRjy();
     }
+
+//#define JS_EVENT_BUTTON		0x01	/* button pressed/released */
+//#define JS_EVENT_AXIS		0x02	/* joystick moved */
+//#define JS_EVENT_INIT		0x80	/* initial state of device */
+
+//struct js_event {
+//    __u32 time;	/* event timestamp in milliseconds */
+//    __s16 value;	/* value */
+//    __u8 type;	/* event type */
+//    __u8 number;	/* axis/button number */
+//};
+
+    public struct js_event 
+    {
+        public UInt32 time;    /* event timestamp in milliseconds */
+        public Int16 value;    /* value */
+        public byte type;      /* event type */
+        public byte number;    /* axis/button number */
+    }
+    public class BotPi
+    {
+        public const int JS_EVENT_BUTTON = 0x01;
+        public const int JS_EVENT_AXIS = 0x02;
+        public const int JS_EVENT_INIT = 0x80;
+
+        [DllImport("libbrickpinet")]
+        public static extern int SetupJoystick();
+        [DllImport("libbrickpinet")]
+        public static extern int ReadJoystick(ref int type, ref js_event ev );
+    }
 }
