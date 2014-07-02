@@ -44,6 +44,7 @@ namespace WebBrick
                 if (req.Url.ToString().IndexOf("/left") != -1) bot.left();
                 if (req.Url.ToString().IndexOf("/right") != -1) bot.right();
                 if (req.Url.ToString().IndexOf("/stop") != -1) bot.stop();
+                Console.WriteLine(string.Format("req: {0}", req.Url));
 
                 StreamWriter sw = new StreamWriter(res.OutputStream);
                 sw.WriteLine(string.Format("req: {0}", req.Url));
