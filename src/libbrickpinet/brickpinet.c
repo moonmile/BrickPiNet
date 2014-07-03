@@ -1,7 +1,6 @@
 ﻿/*
  * BrickPi Interface for .NET 
  */
-#include <linux/joystick.h>
 #include "tick.h"
 #include "BrickPi.h"
 
@@ -88,15 +87,3 @@ int GetButtonLjy() { return _btn.ljy; }
 int GetButtonRjx() { return _btn.rjx; }
 int GetButtonRjy() { return _btn.rjy; }
 
-static int js_axis[4];
-static int js_fd;
-
-int SetupJoystick()
-{
-	js_fd = open("/dev/input/js0", O_RDONLY);
-	return js_fd;
-}
-int ReadJoystick(int *type, struct js_event *js) 
-{
-
-}

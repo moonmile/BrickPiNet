@@ -6,7 +6,7 @@ namespace Sample
     class simplebot_joystick
     {
         BPiMotor motor1, motor2;
-        BotPiJoystick js;
+        BPiJoystick js;
 
         public void main()
         {
@@ -15,11 +15,19 @@ namespace Sample
             this.motor1 = new BPiMotor() { Port = BrickPi.PORT_B, Enabled = true };
             this.motor2 = new BPiMotor() { Port = BrickPi.PORT_C, Enabled = true };
 
-            BotPi.SetupJoystick();
-            this.js = new BotPiJoystick(); 
-            this.js.OnChanged += OnJoystickChanged;
+            js = new BPiJoystick();
+            js.OnJoystickChanged += js_OnJoystickChanged;
+            js.Setup();
+
             BPi.Timeout = 3000;
             this.Go();
+        }
+
+        void js_OnJoystickChanged(object sender, JoystickEventArgs e)
+        {
+            int ly = e.Joystick.LeftAxisY;
+            int ry = e.Joystick.RightAxisY;
+            Console.WriteLine("joystick {0} {1}");
         }
 
         void move_bot(int sp1, int sp2)
@@ -30,11 +38,6 @@ namespace Sample
         void Go()
         {
             var k = Console.ReadKey();
-        }
-
-        void OnJoystickChanged( object sender, EventJsArgs e )
-        {
-            Console.WriteLine("joy: {0} {1} {2}", e.ev.type, e.ev.number, e.ev.value);
         }
     }
 }

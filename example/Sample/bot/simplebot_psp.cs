@@ -3,6 +3,7 @@ using Moonmile.BrickPiNet;
 
 namespace Sample
 {
+#if false
     class simplebot_psp
     {
         BPiMotor motor1, motor2;
@@ -40,4 +41,5 @@ namespace Sample
             }
         }
     }
+#endif
 }

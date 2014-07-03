@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="BindableBase.cs" />
     <Compile Include="BPi.cs" />
-    <Compile Include="BotPiJoystick.cs" />
+    <Compile Include="BPiJoystick.cs" />
     <Compile Include="BrickPi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

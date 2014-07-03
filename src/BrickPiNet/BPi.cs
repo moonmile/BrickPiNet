@@ -172,7 +172,7 @@ namespace Moonmile.BrickPiNet
             BrickPi.UpdateValues();
         }
     }
-
+#if false
     public class BPiJoystick : BPiSensor 
     {
         private Btns _Buttons = new Btns();
@@ -232,7 +232,7 @@ namespace Moonmile.BrickPiNet
             public int RightJoyY { get; set; }
         }
     }
-
+#endif
     public class BPiTouch : BPiSensor
     {
         public BPiTouch()
