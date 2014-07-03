@@ -23,6 +23,7 @@ namespace Sample
                     case "simple": new simplebot_simple().main(); break;
                     case "speed": new simplebot_speed().main(); break;
                     case "psp": new simplebot_psp().main(); break;
+                    case "js": new simplebot_joystick().main(); break;
                     case "ev3color": new ev3.ev3_colorsensor().main(); break;
                     case "ev3gyro": new ev3.ev3_gyrosensor().main(); break;
                     case "ev3touch": new ev3.ev3_touchsensor().main(); break;
@@ -41,7 +42,8 @@ Usage sample.exe [menu]
   raw    : simplebot_raw
   simple : simplebot_simple
   speed  : simplebot_speed
-  psp    : simplebot_php
+  psp    : simplebot_psp
+  js     : simplebot_joystick
   ev3color : ev3_colorsensor
   ev3gyro  : ev3_gyrosensor
   ev3touch : ev3_touchsensor

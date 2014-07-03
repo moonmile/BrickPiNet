@@ -1,6 +1,10 @@
 ﻿/*
  * BrickPi Interface for .NET 
  */
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+
 #include <linux/joystick.h>
 #include "tick.h"
 #include "BrickPi.h"
@@ -98,5 +102,14 @@ int SetupJoystick()
 }
 int ReadJoystick(int *type, struct js_event *js) 
 {
-
+	int size = read( js_fd, js, sizeof(struct js_event));
+	if ( size != sizeof( struct js_event) ) {
+printf("size error $d\n", size );
+		return size;
+	} else {
+printf("in lib %d %d %d\n", size, js->number, js->value );
+		js_axis[ js->number ] = js->value ;
+		*type = js->type;
+		return *type;
+	}
 }

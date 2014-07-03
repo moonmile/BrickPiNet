@@ -201,5 +201,10 @@ namespace Moonmile.BrickPiNet
         public static extern int SetupJoystick();
         [DllImport("libbrickpinet")]
         public static extern int ReadJoystick(ref int type, ref js_event ev );
+
+[DllImport("libc.so.6")]
+public static extern int open( string name, int flags );
+[DllImport("libc.so.6")]
+public static extern int read( int fd, byte[] buffer, int length );
     }
 }

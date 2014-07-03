@@ -15,9 +15,13 @@ namespace Sample
             this.motor1 = new BPiMotor() { Port = BrickPi.PORT_B, Enabled = true };
             this.motor2 = new BPiMotor() { Port = BrickPi.PORT_C, Enabled = true };
 
-            BotPi.SetupJoystick();
+            int res = BotPi.SetupJoystick();
+	    Console.WriteLine("SetupJoystick {0}", res );
             this.js = new BotPiJoystick(); 
             this.js.OnChanged += OnJoystickChanged;
+Console.WriteLine("Joystick.Init" );
+	    this.js.Init();
+
             BPi.Timeout = 3000;
             this.Go();
         }
@@ -29,7 +33,10 @@ namespace Sample
         }
         void Go()
         {
-            var k = Console.ReadKey();
+            // var k = Console.ReadKey();
+		while(true) {
+			System.Threading.Thread.Sleep(100);
+}
         }
 
         void OnJoystickChanged( object sender, EventJsArgs e )

@@ -4,6 +4,7 @@ all: sample.exe \
 
 sample.exe : Sample/bot/simplebot_raw.cs \
 		Sample/bot/simplebot_psp.cs \
+		Sample/bot/simplebot_joystick.cs \
 		Sample/bot/simplebot_simple.cs \
 		Sample/bot/simplebot_speed.cs \
 		Sample/ev3/ev3_colorsensor.cs \
@@ -17,6 +18,7 @@ sample.exe : Sample/bot/simplebot_raw.cs \
 		/r:BrickPiNet.dll \
 		Sample/bot/simplebot_raw.cs \
 		Sample/bot/simplebot_psp.cs \
+		Sample/bot/simplebot_joystick.cs \
 		Sample/bot/simplebot_simple.cs \
 		Sample/bot/simplebot_speed.cs \
 		Sample/ev3/ev3_colorsensor.cs \
