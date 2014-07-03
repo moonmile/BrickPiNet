@@ -6,8 +6,49 @@ Raspberry Pi から LEGO mindstorms EV3 を扱う BrickPi モジュールの .NE
 ## 特徴
 
 - BPiMotor, BPiSensor クラスでオブジェクト指向的にアクセスが可能
-- MVVM パターンを使ったプロパティ更新
+- MVVM パターンを使ったプロパティ更新 BPiMotor
+- Dualshock3 コントローラを使った操作 BPiJoystick
 - センサーの値更新はイベントで取得（予定）
+
+## ライセンス
+
+The MIT License (MIT)
+
+## ライブラリの作成
+
+```
+cd src
+make 
+```
+
+- libbrickpinet.so C言語ライブラリ
+- BrickPiNet.dll .NET用クラスライブラリ
+
+## サンプル動作
+
+```
+cd example
+make
+```
+
+実行時にシリアルポート, ジョイスティックにアクセスするため root 権限が必要です
+```
+masuda@raspberrypi ~/BrickPiNet/example $ sudo ./sample.exe
+
+Usage sample.exe [menu]
+ menu is
+  raw    : simplebot_raw
+  simple : simplebot_simple
+  speed  : simplebot_speed
+  joy    : simplebot_joystick
+  ev3color : ev3_colorsensor
+  ev3gyro  : ev3_gyrosensor
+  ev3touch : ev3_touchsensor
+
+masuda@raspberrypi ~/BrickPiNet/example $
+```
+
+![simplebot_simple](http://www.moonmile.net/blog/wp-content/uploads/2014/06/image_thumb23.png)
 
 ## C# サンプル
 

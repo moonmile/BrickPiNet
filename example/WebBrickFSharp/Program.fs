@@ -15,6 +15,10 @@ let hl = new HttpListener()
 hl.Prefixes.Add( prefix )
 hl.Start()
 
+let bot = new Sample.simplebot_simple()
+Console.WriteLine("simplebot_simple init")
+bot.init()
+
 while true do
     let context = hl.GetContext()
     let req = context.Request
@@ -24,10 +28,18 @@ while true do
     res.ContentType <- MediaTypeNames.Text.Html
     res.ContentEncoding <- Encoding.UTF8
 
+    match req.Url.LocalPath with
+        | "/fwd" -> bot.fwd()
+        | "/back" -> bot.back()
+        | "/left" -> bot.left()
+        | "/right" -> bot.right()
+        | "/stop" -> bot.stop()
+        | _ -> ()
+    
+    System.Console.WriteLine(String.Format("req: {0}", req.Url))
+
     let sw = new StreamWriter( res.OutputStream )
     sw.WriteLine(String.Format("req: {0}", req.Url))
     sw.WriteLine("this is server program's response. ")
     sw.Flush()
     res.Close()
-
-

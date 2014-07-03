@@ -39,11 +39,14 @@ namespace WebBrick
                 res.ContentType = MediaTypeNames.Text.Html;
                 res.ContentEncoding = Encoding.UTF8;
 
-                if (req.Url.ToString().IndexOf("/fwd") != -1) bot.fwd();
-                if (req.Url.ToString().IndexOf("/back") != -1) bot.back();
-                if (req.Url.ToString().IndexOf("/left") != -1) bot.left();
-                if (req.Url.ToString().IndexOf("/right") != -1) bot.right();
-                if (req.Url.ToString().IndexOf("/stop") != -1) bot.stop();
+                switch (req.Url.LocalPath)
+                {
+                    case "/fwd": bot.fwd(); break;
+                    case "/back": bot.back(); break;
+                    case "/left": bot.left(); break;
+                    case "/right": bot.right(); break;
+                    case "/stop": bot.stop(); break;
+                }
                 Console.WriteLine(string.Format("req: {0}", req.Url));
 
                 StreamWriter sw = new StreamWriter(res.OutputStream);
