@@ -19,7 +19,7 @@ namespace Sample
             js.OnJoystickChanged += js_OnJoystickChanged;
             js.Setup();
 
-            BPi.Timeout = 3000;
+            BPi.Timeout = 5000;
             this.Go();
         }
 
@@ -27,7 +27,11 @@ namespace Sample
         {
             int ly = e.Joystick.LeftAxisY;
             int ry = e.Joystick.RightAxisY;
-            Console.WriteLine("joystick {0} {1}");
+            Console.WriteLine("joystick {0} {1}", ly, ry);
+	    int sp1 = ly/(32767/200);
+	    int sp2 = ry/(32767/200);
+	    move_bot( sp1, sp2 );
+
         }
 
         void move_bot(int sp1, int sp2)
