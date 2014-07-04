@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 
 using Xamarin.Forms.Platform.Android;
+using WebBrickClientFs;
 
 namespace WebBrickClient.Droid
 {

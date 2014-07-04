@@ -14,7 +14,6 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <AndroidUseLatestPlatformSdk />
     <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
     <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
     <AndroidStoreUncompressedFileExtensions />
@@ -79,9 +78,9 @@
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WebBrickClient\WebBrickClient.csproj">
-      <Name>WebBrickClient</Name>
-      <Project>{07259A64-E1D1-43A9-8D3F-1989A12745EB}</Project>
+    <ProjectReference Include="..\..\WebBrickClientFs\WebBrickClientFs\WebBrickClientFs.fsproj">
+      <Project>571E0A3B-E069-4B46-BBAC-B0F060351904</Project>
+      <Name>WebBrickClientFs</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
