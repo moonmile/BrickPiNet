@@ -77,12 +77,6 @@
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\WebBrickClientFs\WebBrickClientFs\WebBrickClientFs.fsproj">
-      <Project>571E0A3B-E069-4B46-BBAC-B0F060351904</Project>
-      <Name>WebBrickClientFs</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\..\packages\Xamarin.Forms.1.1.1.6206\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" Condition="Exists('..\..\..\packages\Xamarin.Forms.1.1.1.6206\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -98,4 +92,10 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\WebBrickClientFs\WebBrickClientFs\WebBrickClientFs.fsproj">
+      <Project>571E0A3B-E069-4B46-BBAC-B0F060351904</Project>
+      <Name>WebBrickClientFs</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

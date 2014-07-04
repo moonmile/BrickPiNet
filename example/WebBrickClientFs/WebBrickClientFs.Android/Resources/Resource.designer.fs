@@ -23,10 +23,10 @@ namespace WebBrickClientFs.Android
     #nowarn "51" // address-of operator can occur in the code
     #nowarn "1183" // unused 'this' reference
     
-    exception ReturnException3aa5a6e9b4ef47558e21d92e043ba35f of obj
-    exception ReturnNoneException3aa5a6e9b4ef47558e21d92e043ba35f
+    exception ReturnException0532397670af48f88dcb864c5e93ea0a of obj
+    exception ReturnNoneException0532397670af48f88dcb864c5e93ea0a
     [<AutoOpen>]
-    module FuncConvertFinalOverload3aa5a6e9b4ef47558e21d92e043ba35f =
+    module FuncConvertFinalOverload0532397670af48f88dcb864c5e93ea0a =
       // This extension member adds to the FuncConvert type and is the last resort member in the method overloading rules. 
       type global.Microsoft.FSharp.Core.FuncConvert with
           /// A utility function to convert function values from tupled to curried form
