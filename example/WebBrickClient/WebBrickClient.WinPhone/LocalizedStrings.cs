@@ -3,7 +3,7 @@
 namespace WebBrickClient.WinPhone
 {
     /// <summary>
-    /// Provides access to string resources.
+    /// 文字列リソースにアクセスできるようにします。
     /// </summary>
     public class LocalizedStrings
     {

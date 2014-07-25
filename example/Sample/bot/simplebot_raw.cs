@@ -7,6 +7,7 @@ namespace Sample
 {
     class Program
     {
+        int arm1 = BrickPi.PORT_A;
         int motor1 = BrickPi.PORT_B;
         int motor2 = BrickPi.PORT_C;
         int speed = 200;
@@ -41,7 +42,16 @@ namespace Sample
             BrickPi.SetMotorSpeed(motor1, 0);
             BrickPi.SetMotorSpeed(motor2, 0);
         }
-
+        /*
+        void armUp()
+        {
+            BrickPi.SetMotorSpeed(arm1, 100);
+        }
+        void armDown()
+        {
+            BrickPi.SetMotorSpeed(arm1, -100);
+        }
+        */
         public void main()
         {
             int res;
@@ -50,8 +60,10 @@ namespace Sample
             Console.WriteLine("BrickPiSetup: {0}", res);
             if (res != 0) return;
 
+            this.arm1 = BrickPi.PORT_A;
             this.motor1 = BrickPi.PORT_B;
             this.motor2 = BrickPi.PORT_C;
+            BrickPi.SetMotorEnable(arm1, true);
             BrickPi.SetMotorEnable(motor1, true);
             BrickPi.SetMotorEnable(motor2, true);
             res = BrickPi.SetupSensors();
@@ -79,6 +91,11 @@ namespace Sample
                         case ConsoleKey.Q:
                             loop = false;
                             break;
+                        //case ConsoleKey.F:
+                        //    armUp(); break;
+                        //case ConsoleKey.G:
+                        //    armDown(); break;
+
                     }
                     BrickPi.UpdateValues();
                     System.Threading.Thread.Sleep(10);

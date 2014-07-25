@@ -1,6 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.MonoForAndroid_API_19" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.ARM_19" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="example\WebBrickClientFs\WebBrickClientFs\MainPage.fs">
+    <Files>
+      <File FileName="example\WebBrickClientFs\WebBrickClientFs\packages.config" Line="1" Column="1" />
+      <File FileName="example\WebBrickClientFs\WebBrickClientFs.Android\MainActivity.fs" Line="1" Column="1" />
+      <File FileName="example\WebBrickClientFs\WebBrickClientFs\MainPage.fs" Line="6" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

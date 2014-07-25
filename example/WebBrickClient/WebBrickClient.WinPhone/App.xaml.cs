@@ -13,203 +13,203 @@ namespace WebBrickClient.WinPhone
     public partial class App : Application
     {
         /// <summary>
-        /// Provides easy access to the root frame of the Phone Application.
+        /// Phone アプリケーションのルート フレームへの容易なアクセスを提供します。
         /// </summary>
-        /// <returns>The root frame of the Phone Application.</returns>
+        /// <returns>Phone アプリケーションのルート フレームです。</returns>
         public static PhoneApplicationFrame RootFrame { get; private set; }
 
         /// <summary>
-        /// Constructor for the Application object.
+        /// Application オブジェクトのコンストラクターです。
         /// </summary>
         public App()
         {
-            // Global handler for uncaught exceptions.
+            // キャッチできない例外のグローバル ハンドラーです。
             UnhandledException += Application_UnhandledException;
 
-            // Standard XAML initialization
+            // 標準 XAML の初期化
             InitializeComponent();
 
-            // Phone-specific initialization
+            // Phone 固有の初期化
             InitializePhoneApplication();
 
-            // Language display initialization
+            // 言語表示の初期化
             InitializeLanguage();
 
-            // Show graphics profiling information while debugging.
+            // デバッグ中にグラフィックスのプロファイル情報を表示します。
             if (Debugger.IsAttached)
             {
-                // Display the current frame rate counters.
+                // 現在のフレーム レート カウンターを表示します。
                 Application.Current.Host.Settings.EnableFrameRateCounter = true;
 
-                // Show the areas of the app that are being redrawn in each frame.
+                // 各フレームで再描画されているアプリケーションの領域を表示します。
                 //Application.Current.Host.Settings.EnableRedrawRegions = true;
 
-                // Enable non-production analysis visualization mode,
-                // which shows areas of a page that are handed off to GPU with a colored overlay.
+                // 試験的な分析視覚化モードを有効にします。
+                // これにより、色付きのオーバーレイを使用して、GPU に渡されるページの領域が表示されます。
                 //Application.Current.Host.Settings.EnableCacheVisualization = true;
 
-                // Prevent the screen from turning off while under the debugger by disabling
-                // the application's idle detection.
-                // Caution:- Use this under debug mode only. Application that disables user idle detection will continue to run
-                // and consume battery power when the user is not using the phone.
+                // アプリケーションのアイドル状態の検出を無効にして、デバッガーの実行中に画面が
+                // オフにならないようにします。
+                // 注意: これはデバッグ モードのみで使用してください。ユーザーが電話を使用していないときに、ユーザーのアイドル状態の検出を無効にする
+                // アプリケーションが引き続き実行され、バッテリ電源が消耗します。
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
         }
 
-        // Code to execute when the application is launching (eg, from Start)
-        // This code will not execute when the application is reactivated
+        // (たとえば、[スタート] メニューから) アプリケーションが起動するときに実行されるコード
+        // このコードは、アプリケーションが再アクティブ化済みの場合には実行されません
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
         }
 
-        // Code to execute when the application is activated (brought to foreground)
-        // This code will not execute when the application is first launched
+        // アプリケーションがアクティブになった (前面に表示された) ときに実行されるコード
+        // このコードは、アプリケーションの初回起動時には実行されません
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
         }
 
-        // Code to execute when the application is deactivated (sent to background)
-        // This code will not execute when the application is closing
+        // アプリケーションが非アクティブになった (バックグラウンドに送信された) ときに実行されるコード
+        // このコードは、アプリケーションの終了時には実行されません
         private void Application_Deactivated(object sender, DeactivatedEventArgs e)
         {
         }
 
-        // Code to execute when the application is closing (eg, user hit Back)
-        // This code will not execute when the application is deactivated
+        // (たとえば、ユーザーが戻るボタンを押して) アプリケーションが終了するときに実行されるコード
+        // このコードは、アプリケーションが非アクティブになっているときには実行されません
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
         }
 
-        // Code to execute if a navigation fails
+        // ナビゲーションに失敗した場合に実行されるコード
         private void RootFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             if (Debugger.IsAttached)
             {
-                // A navigation has failed; break into the debugger
+                // ナビゲーションに失敗しました。デバッガーで中断します。
                 Debugger.Break();
             }
         }
 
-        // Code to execute on Unhandled Exceptions
+        // ハンドルされない例外の発生時に実行されるコード
         private void Application_UnhandledException(object sender, ApplicationUnhandledExceptionEventArgs e)
         {
             if (Debugger.IsAttached)
             {
-                // An unhandled exception has occurred; break into the debugger
+                // ハンドルされない例外が発生しました。デバッガーで中断します。
                 Debugger.Break();
             }
         }
 
-        #region Phone application initialization
+        #region Phone アプリケーションの初期化
 
-        // Avoid double-initialization
+        // 初期化の重複を回避します
         private bool phoneApplicationInitialized = false;
 
-        // Do not add any additional code to this method
+        // このメソッドに新たなコードを追加しないでください
         private void InitializePhoneApplication()
         {
             if (phoneApplicationInitialized)
                 return;
 
-            // Create the frame but don't set it as RootVisual yet; this allows the splash
-            // screen to remain active until the application is ready to render.
+            // フレームを作成しますが、まだ RootVisual に設定しないでください。これによって、アプリケーションがレンダリングできる状態になるまで、
+            // スプラッシュ スクリーンをアクティブなままにすることができます。
             RootFrame = new PhoneApplicationFrame();
             RootFrame.Navigated += CompleteInitializePhoneApplication;
 
-            // Handle navigation failures
+            // ナビゲーション エラーを処理します
             RootFrame.NavigationFailed += RootFrame_NavigationFailed;
 
-            // Handle reset requests for clearing the backstack
+            // 次のナビゲーションでバックスタックをクリアして、
             RootFrame.Navigated += CheckForResetNavigation;
 
-            // Ensure we don't initialize again
+            // 再初期化しないようにします
             phoneApplicationInitialized = true;
         }
 
-        // Do not add any additional code to this method
+        // このメソッドに新たなコードを追加しないでください
         private void CompleteInitializePhoneApplication(object sender, NavigationEventArgs e)
         {
-            // Set the root visual to allow the application to render
+            // ルート visual を設定してアプリケーションをレンダリングできるようにします
             if (RootVisual != RootFrame)
                 RootVisual = RootFrame;
 
-            // Remove this handler since it is no longer needed
+            // このハンドラーは必要なくなったため、削除します
             RootFrame.Navigated -= CompleteInitializePhoneApplication;
         }
 
         private void CheckForResetNavigation(object sender, NavigationEventArgs e)
         {
-            // If the app has received a 'reset' navigation, then we need to check
-            // on the next navigation to see if the page stack should be reset
+            // アプリが 'リセット' ナビゲーションを受け取った場合、チェックする必要があります
+            // ページ スタックをリセットする必要があるかどうかを確認するためのリセット要求を処理します
             if (e.NavigationMode == NavigationMode.Reset)
                 RootFrame.Navigated += ClearBackStackAfterReset;
         }
 
         private void ClearBackStackAfterReset(object sender, NavigationEventArgs e)
         {
-            // Unregister the event so it doesn't get called again
+            // もう一度呼び出されないようにイベントの登録を解除します
             RootFrame.Navigated -= ClearBackStackAfterReset;
 
-            // Only clear the stack for 'new' (forward) and 'refresh' navigations
+            // '新しい' (次の) ナビゲーションおよび '更新' ナビゲーションのスタックのみをクリアします
             if (e.NavigationMode != NavigationMode.New && e.NavigationMode != NavigationMode.Refresh)
                 return;
 
-            // For UI consistency, clear the entire page stack
+            // UI の一貫性を維持するため、ページ スタック全体をクリアします
             while (RootFrame.RemoveBackEntry() != null)
             {
-                ; // do nothing
+                ; // 何も実行しません
             }
         }
 
         #endregion
 
-        // Initialize the app's font and flow direction as defined in its localized resource strings.
+        // アプリのフォントと方向をそのローカライズされたリソース文字列で定義されたように初期化します。
         //
-        // To ensure that the font of your application is aligned with its supported languages and that the
-        // FlowDirection for each of those languages follows its traditional direction, ResourceLanguage
-        // and ResourceFlowDirection should be initialized in each resx file to match these values with that
-        // file's culture. For example:
+        // アプリケーションのフォントがそのサポートされる言語と一致し、各言語の FlowDirection がその従来の
+        // 方向に従うようにするには、各 resx ファイルで ResourceLanguage と ResourceFlowDirection を
+        // 初期化して、これらの値をそのファイルのカルチャと一致させる
+        // 必要があります。例:
         //
         // AppResources.es-ES.resx
-        //    ResourceLanguage's value should be "es-ES"
-        //    ResourceFlowDirection's value should be "LeftToRight"
+        //    ResourceLanguage の値は "es-ES" にする必要があります
+        //    ResourceFlowDirection の値は "LeftToRight" にする必要があります
         //
         // AppResources.ar-SA.resx
-        //     ResourceLanguage's value should be "ar-SA"
-        //     ResourceFlowDirection's value should be "RightToLeft"
+        //     ResourceLanguage の値は "ar-SA" にする必要があります
+        //     ResourceFlowDirection の値は "RightToLeft" にする必要があります
         //
-        // For more info on localizing Windows Phone apps see http://go.microsoft.com/fwlink/?LinkId=262072.
+        // Windows Phone アプリのローカライズの詳細については、http://go.microsoft.com/fwlink/?LinkId=262072 を参照してください。
         //
         private void InitializeLanguage()
         {
             try
             {
-                // Set the font to match the display language defined by the
-                // ResourceLanguage resource string for each supported language.
+                // サポートされている各言語の ResourceLanguage リソース文字列で定義された
+                // 表示言語と一致するようにフォントを設定します。
                 //
-                // Fall back to the font of the neutral language if the Display
-                // language of the phone is not supported.
+                // 電話の表示言語がサポートされていない場合は、ニュートラル
+                // 言語のフォントにフォールバックします。
                 //
-                // If a compiler error is hit then ResourceLanguage is missing from
-                // the resource file.
+                // コンパイラ エラーが発生すると、ResourceLanguage がリソース ファイル
+                // からなくなります。
                 RootFrame.Language = XmlLanguage.GetLanguage(AppResources.ResourceLanguage);
 
-                // Set the FlowDirection of all elements under the root frame based
-                // on the ResourceFlowDirection resource string for each
-                // supported language.
+                // サポートされる各言語の ResourceFlowDirection リソース文字列に基づいて、
+                // ルート フレームのすべての要素の FlowDirection を
+                // 設定します。
                 //
-                // If a compiler error is hit then ResourceFlowDirection is missing from
-                // the resource file.
+                // コンパイラ エラーが発生すると、ResourceFlowDirection がリソース ファイル
+                // からなくなります。
                 FlowDirection flow = (FlowDirection)Enum.Parse(typeof(FlowDirection), AppResources.ResourceFlowDirection);
                 RootFrame.FlowDirection = flow;
             }
             catch
             {
-                // If an exception is caught here it is most likely due to either
-                // ResourceLangauge not being correctly set to a supported language
-                // code or ResourceFlowDirection is set to a value other than LeftToRight
-                // or RightToLeft.
+                // ここで例外が発生した場合、その原因は、
+                // ResourceLangauge がサポートされている言語コードに正しく設定されていないこと、
+                // または ResourceFlowDirection が LeftToRight または RightToLeft 以外の
+                // 値に設定されていることである可能性があります。
 
                 if (Debugger.IsAttached)
                 {

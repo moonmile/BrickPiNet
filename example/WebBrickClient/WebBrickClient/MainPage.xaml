@@ -3,14 +3,26 @@
 					   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 					   x:Class="WebBrickClient.MainPage"
              Title="WebBrick Client">
-	<StackLayout Padding="5,20,5,5">
-    <Label Text="WebBrick Client Sample" />
-		<Button Text="Forward" Clicked="OnClickForward"/>
-		<Button Text="Back"    Clicked="OnClickBack"/>
-		<Button Text="Left"    Clicked="OnClickLeft"/>
-		<Button Text="Right"   Clicked="OnClickRight"/>
-		<Button Text="Stop"    Clicked="OnClickStop"/>
-		<Button Text="Option"  Clicked="OnClickOption" />
-		<Label x:Name="result" />
-	</StackLayout>
+  <StackLayout>
+    <Label Text="WebBrick Client Sample"/>
+    <Grid Padding="10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="150" />
+        <RowDefinition Height="150" />
+        <RowDefinition Height="150" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Button Text="Forward" Clicked="OnClickForward" Grid.Row="0" Grid.Column="1"/>
+      <Button Text="Back"    Clicked="OnClickBack"    Grid.Row="2" Grid.Column="1"/>
+      <Button Text="Left"    Clicked="OnClickLeft"    Grid.Row="1" Grid.Column="0"/>
+      <Button Text="Right"   Clicked="OnClickRight"   Grid.Row="1" Grid.Column="2"/>
+      <Button Text="Stop"    Clicked="OnClickStop"    Grid.Row="1" Grid.Column="1"/>
+    </Grid>
+    <Button Text="Option"  Clicked="OnClickOption" />
+		<Label x:Name="result"	Font="Middle" />
+    </StackLayout>
 </ContentPage>

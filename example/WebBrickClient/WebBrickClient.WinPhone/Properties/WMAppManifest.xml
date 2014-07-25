@@ -1,8 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-
+<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
-  <DefaultLanguage xmlns="" code="en-US"/>
-  <App xmlns="" ProductID="{5d1404ec-45b7-4bfb-94b0-d2f09b4dbc0c}" Title="WebBrickClient.WinPhone" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal"  Author="WebBrickClient.WinPhone author" Description="Sample description" Publisher="WebBrickClient.WinPhone" PublisherID="{a4410233-4f22-4a1d-8a14-9762e81c5fc1}">
+  <DefaultLanguage xmlns="" code="ja-JP"/>
+  <App xmlns="" ProductID="{37c56a44-8407-4b0b-826d-eae21f233ecb}" Title="WebBrickClient.WinPhone" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="WebBrickClient.WinPhone author" Description="Sample description" Publisher="WebBrickClient.WinPhone" PublisherID="{3eafaf7e-5429-41fb-8f4f-276032d1db70}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING"/>
@@ -12,10 +11,10 @@
       <Capability Name="ID_CAP_WEBBROWSERCOMPONENT"/>
     </Capabilities>
     <Tasks>
-      <DefaultTask  Name ="_default" NavigationPage="MainPage.xaml"/>
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml"/>
     </Tasks>
     <Tokens>
-      <PrimaryToken TokenID="PhoneApp1Token" TaskName="_default">
+      <PrimaryToken TokenID="WebBrickClient.WinPhoneToken" TaskName="_default">
         <TemplateFlip>
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>

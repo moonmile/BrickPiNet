@@ -97,5 +97,9 @@
       <Project>571E0A3B-E069-4B46-BBAC-B0F060351904</Project>
       <Name>WebBrickClientFs</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WebBrickClient\WebBrickClient.csproj">
+      <Project>{07259a64-e1d1-43a9-8d3f-1989a12745eb}</Project>
+      <Name>WebBrickClient</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

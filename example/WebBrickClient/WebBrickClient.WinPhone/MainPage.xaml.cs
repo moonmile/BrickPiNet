@@ -7,14 +7,14 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-
+using WebBrickClient.WinPhone.Resources;
 using Xamarin.Forms;
-
 
 namespace WebBrickClient.WinPhone
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        // コンストラクター
         public MainPage()
         {
             InitializeComponent();

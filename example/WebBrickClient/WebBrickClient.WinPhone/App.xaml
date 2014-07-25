@@ -5,13 +5,13 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone">
 
-    <!--Application Resources-->
+    <!--アプリケーション リソース-->
     <Application.Resources>
         <local:LocalizedStrings xmlns:local="clr-namespace:WebBrickClient.WinPhone" x:Key="LocalizedStrings"/>
     </Application.Resources>
 
     <Application.ApplicationLifetimeObjects>
-        <!--Required object that handles lifetime events for the application-->
+        <!--アプリケーションのライフタイム イベントを処理する必須オブジェクト-->
         <shell:PhoneApplicationService
             Launching="Application_Launching" Closing="Application_Closing"
             Activated="Application_Activated" Deactivated="Application_Deactivated"/>
